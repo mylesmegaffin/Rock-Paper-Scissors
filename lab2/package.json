@@ -1,0 +1,19 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "lab2 javascript assignment ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "lab2",
+    "connect"
+  ],
+  "author": "Myles Megaffin",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "^3.7.0"
+  }
+}
