@@ -20,30 +20,32 @@ game();
 
 function game() {
     // Variables 
-    let player = "";
-    let computer = "";
     let game = true;
     let score = 0;
 
+
     // Keep the game running until we break
     while (game) {
-
         // Setting the players choice in a value
         player = playerChoice()
         computer = computerChoice()
 
-        // Check who won
-        
-
+        // Check who won and add it to the socore
         score = score + calculateWinner(computer, player)
         console.log(score)
-        //checking to see if the player wants to play again
-        if (prompt("play again? y/n ") == 'n') {
-            game = false;
-        }
+
+        game = continueToPlay()
     }
 }
 
+function continueToPlay() {
+    //checking to see if the player wants to play again
+    if (prompt("play again? y/n ") == 'n') {
+        return false;
+    } else {
+        return true
+    }
+}
 
 function playerChoice() {
     // Getting the users input here with the prompt command. Then converting it to lowercase 
