@@ -29,10 +29,11 @@ function game() {
         player = playerChoice()
         computer = computerChoice()
 
-        // Check who won and add it to the socore
+        // Check who won and add it to the score
         score = score + calculateWinner(computer, player)
         console.log(score)
 
+        // Asking what if they want to continue to play and setting the answer to the game state
         game = continueToPlay()
     }
 }
@@ -65,21 +66,20 @@ function playerChoice() {
             console.log(`User Has Chosen: ${userSelection}`);
             return "scissors"
         default:
-            // Show the user what they have typed in is not a Rock Paper or Scissor
+            // Show the user what they have typed in is not a Rock, Paper, or Scissor
             console.log(`"${userSelection}" is NOT one of the three options`);
     }
 }
 
 function computerChoice() {
     let computerSelection = 0.00;
-    // Get the AI's throw
+    // Get the AI's choice
     // Math.random will give us a random floating number
     computerSelection = Math.random();
     // console.log(computerSelection); // Used for Testing //
 
     // Turning the AI's throw into a Rock, Paper or Scissors
-    //      -We are not using a switch statement because switch statements are used for finding out the exact value
-    // This if statement checks if the user throw rock paper or scissors and if so then we run the code
+    // Check if the computer throw rock paper or scissors and if so then we run the code
     if (computerSelection <= 0.34) {
         console.log("Computer Has Chosen: *ROCK* ");
         return "rock";
@@ -95,6 +95,7 @@ function computerChoice() {
 }
 
 function calculateWinner(computerChoice, userSelection) {
+    // Calculate who won and then return the score
     // Calculating if the Computer Won
     if (computerChoice == "rock" && userSelection == "scissors") {
         console.log(`\tThe Computer Won \n\tRock Beats ${userSelection}`);
@@ -135,7 +136,8 @@ function calculateWinner(computerChoice, userSelection) {
         return 0
     }
     else {
-        // If the user didnt throw correctly then we dont return/log anything 
+        // If the user didnt throw correctly then we dont return/log anything
+        console.log("something went wrong") 
     }
 
 }
