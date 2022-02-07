@@ -4,11 +4,7 @@ JavaScript Rock Paper Scissors Game
         just ask them what they wont to throw.
 2.  we need to get the "bot/ai" to choose their pick/hand
         we can use Math.Random function to get the bot to pick the hand.
-3.  disply both at the same time
-        maybe have a counter that counts down and displys the both
-        have it wait a second and show the winner or show the winner when it shows.
-4.  determin who won
+3.  determin who won
         have and if statement or have a switch statement.
-
-hand it in via github
-    have a repo with the teacher as a collaborator
+4.  disply to the user who won
+        have the user see who won and what each party picked.
