@@ -1,7 +1,6 @@
 /*
 ;==========================================
-; Title:  JavaScropt FrameWorks COMP2068
-;         Lab One - JavaScript Rock Paper Scissors
+; Title: JavaScript Rock Paper Scissors
 ; Author: Myles Megaffin
 ; Date:   1 Jun 2021
 ; Edit Date: 7 Feb 2022
@@ -14,35 +13,38 @@ const ps = require("prompt-sync");
 const prompt = ps()
 
 // -- The Game --
+// Welcoming the user to the game
+console.log("\nWelcome to Rock. Paper. Scissors")
 game();
+// -- End --
 
 function game() {
     // Variables 
     let player = "";
     let computer = "";
     let game = true;
-
+    let score = 0;
 
     // Keep the game running until we break
     while (game) {
-        // Welcoming the user to the game
-        console.log("\nWelcome to Rock. Paper. Scissors")
 
         // Setting the players choice in a value
         player = playerChoice()
         computer = computerChoice()
 
         // Check who won
-        calculateWinner(computer, player)
+        
 
-
+        score = score + calculateWinner(computer, player)
+        console.log(score)
         //checking to see if the player wants to play again
         if (prompt("play again? y/n ") == 'n') {
             game = false;
         }
-
     }
 }
+
+
 function playerChoice() {
     // Getting the users input here with the prompt command. Then converting it to lowercase 
     userSelection = prompt("What are you gonna throw? : ").toLowerCase()
@@ -84,46 +86,55 @@ function computerChoice() {
         console.log("Computer Has Chosen: *ROCK* ");
         return "rock";
     }
-    if (computerSelection >= 0.67) {
+    else if (computerSelection <= 0.67) {
         console.log("Computer Has Chosen: *PAPER* ");
         return "paper";
     }
-    if (computerSelection >= 1) {
+    else {
         console.log("Computer Has Chosen: *SCISSORS* ");
         return "scissors";
     }
 }
 
 function calculateWinner(computerChoice, userSelection) {
-    // Calculating if the winner
+    // Calculating if the Computer Won
     if (computerChoice == "rock" && userSelection == "scissors") {
         console.log(`\tThe Computer Won \n\tRock Beats ${userSelection}`);
+        return -1
     }
     else if (computerChoice == "paper" && userSelection == "rock") {
         console.log(`\tThe Computer Won \n\tPaper Beats ${userSelection}`);
+        return -1
     }
     else if (computerChoice == "scissors" && userSelection == "paper") {
         console.log(`\tThe Computer Won \n\tScissors Beats ${userSelection}`);
+        return -1
     }
-    // Calculating if the User Wins
+    // Calculating if the User Won
     else if (userSelection == "rock" && computerChoice == "scissors") {
         console.log(`\tYou Won \n\t${userSelection} Beats Scissors`);
+        return 1
     }
     else if (userSelection == "paper" && computerChoice == "rock") {
         console.log(`\tYou Won \n\t${userSelection} Beats Rock`);
+        return 1
     }
     else if (userSelection == "scissors" && computerChoice == "paper") {
         console.log(`\tYou Won \n\t${userSelection} Beats Paper`);
+        return 1
     }
     // Calculating if there is a tie
     else if (userSelection == "rock" && computerChoice == "rock") {
         console.log("\tTie Both of You Throw Rock");
+        return 0
     }
     else if (userSelection == "paper" && computerChoice == "paper") {
         console.log("\tTie Both of You Throw Paper");
+        return 0
     }
     else if (userSelection == "scissors" && computerChoice == "scissors") {
         console.log("\tTie Both of You Throw Scissors");
+        return 0
     }
     else {
         // If the user didnt throw correctly then we dont return/log anything 
