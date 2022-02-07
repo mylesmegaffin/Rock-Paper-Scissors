@@ -23,7 +23,6 @@ function game() {
     let game = true;
     let score = 0;
 
-
     // Keep the game running until we break
     while (game) {
         // Setting the players choice in a value
@@ -57,17 +56,14 @@ function playerChoice() {
             // Printing out what they have chosen.
             console.log(`User Has Chosen: ${userSelection}`);
             return "rock"
-            break;
         case 'paper':
             // Printing out what they have chosen.
             console.log(`User Has Chosen: ${userSelection}`);
             return "paper"
-            break;
         case 'scissors':
             // Printing out what they have chosen.
             console.log(`User Has Chosen: ${userSelection}`);
             return "scissors"
-            break;
         default:
             // Show the user what they have typed in is not a Rock Paper or Scissor
             console.log(`"${userSelection}" is NOT one of the three options`);
@@ -144,41 +140,34 @@ function calculateWinner(computerChoice, userSelection) {
 
 }
 /*
-====== Thoughts on Assignment ======
+====== UPDATED* ======
+====== Thoughts on the Project ======
 
-The assignment was fun and easy alot made me think of start thinking how to program again. it felt kinda basic tho and i believe this is all review 
-i hope the projects and assignments get to be more into depth into js and node. i would like to make my own website by the end of the course.
+This project was fun and really cool to revisit it. I had a lot of fun refactoring it. 
 
 
 ====== What I struggled with ======
 
-just getting back into programming so it was kinda hard remembering what the default in the switch statement did
-trying to figure out how to use the math.random in a effective and lazy/easy way
-(havent done the gethub upload so that might be hard)
-trying to put null for the userSelection and ripping me up so i just left it = ""
+I struggled looking reading the code when i first came back to the project. I was a awhile since i looked at the code so my comments helped me 
+identify what was going on. While refactoring i would break parts of the code and I would get stuck trying to figure out why it broke.
 
 
 ====== If I had todo this Again ======
 
-- i would have the "calculating a winner" part alittle less hard coded if i could
+- make a ui instead of running it in the console
 - i would make a main menu
-- i would have a scoreboard and have a it in the menu to see how many time you have beaten the computer
 - maybe have it so the scoreboard would get saved in a file so that when you stop the game you wouldnt lose all the data
-- have an alert pop up and show you who won or lost the the end
-- make it more the project Object Oriented (OOP)
-    this would be easy just acouple of functions and then calling them in the while loop of the game
 - have a timer and count down from 3 and it shows you the computers throw beside yours so you
 
 
 ====== What did I learn / will remember from this Assignment ======
 
 What I Learned
-- a switch statement is used for finding out the exact value
-- how to install a npm via terminal
-- how to import the a lib/npm into code
-- JS syntax
+- refactoring code is hard if the code is hard to follow
+- making the code easier to follow is better than having the code look cool
+- making try to make your code where it comments its self (it doesnt need comments to understand whats going on)
 
 What I Will Remember
-- how to install a npm via terminal
+- to make my code cleaner and easier to follow for other people to read
 
 */
